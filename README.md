@@ -64,6 +64,10 @@
 ####  max_len_group需要设置成total_len，而total_len则需要设置成nb_groups*max_len_group
 ####  比如说nb_groups（组数）最大为60，max_len_group（每组中最大长度）为2，正常total_len应该为120
 ####  但是，我们需要如下设置，才不会报错nb_groups：60，max_len_group：120，正常total_len7200
+### 13.一个说明
+#### 由于每段路径有起始符和结束符，所以报错中经常-2就可以符合我们的认知
+    ![image](https://github.com/user-attachments/assets/0d5d4e11-90f7-40fa-ac54-f569e4b35d4a)
+    96-2=94为实际的total_len,4-2=2,为max_len_group
 ### 13.这篇论文的方法，目前能做到的就是得到小尺度dwg（nb_groups为几十的）的潜在空间向量z，而对于老师所给的dwg(nb_groups为万级别，会报显存错误
 ####   还剩一条路：借鉴这篇论文svg是怎么表示的，我们自己找其它的自编码模型套进去，再得到z(从0开始)
 ####   如果得到了z,那么相似度比较就差不多完成了
