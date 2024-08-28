@@ -68,7 +68,14 @@
 #### 由于每段路径有起始符和结束符，所以报错中经常-2就可以符合我们的认知
 ![1](https://github.com/user-attachments/assets/e6c67bce-581b-4f52-9a14-9081e8bab400)
 ####   96-2=94为实际的total_len,4-2=2,为max_len_group
-### 13.这篇论文的方法，目前能做到的就是得到小尺度dwg（nb_groups为几十的）的潜在空间向量z，而对于老师所给的dwg(nb_groups为万级别，会报显存错误
+### 14.关于显存报错的问题
+#### 我发现随着我使用的显存的增大，我们自己训练的pth文件需要的显存也增大，从24G到32G，再到80G（阿里云租的显卡）,报错信息如下：
+![image](https://github.com/user-attachments/assets/0751ea04-53c9-4549-8d1d-142d9676cc71)
+![image](https://github.com/user-attachments/assets/8d462540-13c9-436d-b4c7-738b75b989c3)
+![image](https://github.com/user-attachments/assets/f787e623-8985-4218-9a05-2d7ed7f59b50)
+#### 减小训练过程中的batch_size对显存需求的影响几乎不变（我猜测这不是影响显存需求的瓶颈），训练过程中batch_size设置如下：
+![image](https://github.com/user-attachments/assets/25d7e195-058f-4707-88c5-424afb87b145)
+### 14.这篇论文的方法，目前能做到的就是得到小尺度dwg（nb_groups为几十的）的潜在空间向量z，而对于老师所给的dwg(nb_groups为万级别），会报显存错误，需要注意的是dwg模型都是关于建筑物这类的，不可能有尺度那么小的
 ####   还剩一条路：借鉴这篇论文svg是怎么表示的，我们自己找其它的自编码模型套进去，再得到z(从0开始)
 ####   如果得到了z,那么相似度比较就差不多完成了
 
