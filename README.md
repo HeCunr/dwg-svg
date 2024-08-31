@@ -3,7 +3,7 @@
 ## 做法：
 ### 文件目录结构为https://github.com/alexandre01/deepsvg这篇论文的结构
 ### 上述文件为我新增到上述论文代码中的py文件
-### 1.在notebooks内添加mul_mytrain.py,change.py,read_pth.py,Withdraw.py,to_pkl.py
+### 1.在notebooks内添加mul_mytrain.py,change.py,read_pth.py,Withdraw.py,to_pkl.py，在deepsvg下添加mytrain.py
 ### 2.在\configs\deepsvg\内添加myconfig.py
 ### 3.mul_mytrain.py的作用为训练得到.pth文件，因为我们需要更调整nb_groups,max_len_group,total_len来满足自己数据集的需求
 ### 4.需要在下述几个地方调整相关配置
